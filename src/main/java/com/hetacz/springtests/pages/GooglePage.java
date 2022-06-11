@@ -1,6 +1,6 @@
 package com.hetacz.springtests.pages;
 
-import com.hetacz.springtests.annotations.Page;
+import com.hetacz.springtests.framework.annotations.Page;
 import com.hetacz.springtests.base.BasePage;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.hetacz.springtests.googletest;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.hetacz.springtests.BaseTest;
 import com.hetacz.springtests.pages.GooglePage;
-import com.hetacz.springtests.utils.ScreenShot;
+import com.hetacz.springtests.framework.service.Screenshot;
 import org.assertj.core.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -19,7 +19,7 @@ public class GoogleTest extends BaseTest {
     private GooglePage googlePage;
     @Autowired
     @Lazy
-    private ScreenShot screenShot;
+    private Screenshot screenShot;
 
     @Test
     public void googleTest() throws IOException {

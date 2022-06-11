@@ -1,6 +1,6 @@
 package com.hetacz.springtests.pages;
 
-import com.hetacz.springtests.annotations.PageComponent;
+import com.hetacz.springtests.framework.annotations.PageComponent;
 import com.hetacz.springtests.base.BasePage;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
