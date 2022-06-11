@@ -2,8 +2,9 @@ package com.hetacz.springtests.googletest;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.hetacz.springtests.BaseTest;
+import com.hetacz.springtests.framework.annotations.LazyAutowired;
 import com.hetacz.springtests.pages.GooglePage;
-import com.hetacz.springtests.utils.ScreenShot;
+import com.hetacz.springtests.framework.service.Screenshot;
 import org.assertj.core.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -14,12 +15,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Google1Test extends BaseTest {
 
-    @Autowired
-    @Lazy
+    @LazyAutowired
     private GooglePage googlePage;
-    @Autowired
-    @Lazy
-    private ScreenShot screenShot;
+    @LazyAutowired
+    private Screenshot screenShot;
 
     @Test
     public void googleTest() throws IOException {

@@ -1,60 +1,66 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
-	id 'org.springframework.boot' version '2.6.7'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
 group = 'com.hetacz'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+compileJava.options.encoding = 'UTF-8'
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
-ext['selenium.version'] = '4.1.4'
-ext['rest-assured.version'] = '5.0.1'
-ext['assertj.version'] = '3.22.0'
+ext['selenium.version'] = '4.2.1'
+//ext['rest-assured.version'] = '5.1.0'
+ext['assertj.version'] = '3.23.1'
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.jetbrains:annotations:23.0.0'
-	testImplementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    testImplementation 'org.jetbrains:annotations:23.0.0'
 
-	compileOnly 'org.projectlombok:lombok'
-	testCompileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testAnnotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation 'org.seleniumhq.selenium:selenium-java'
-	testImplementation 'io.rest-assured:rest-assured'
-	testImplementation 'org.assertj:assertj-core'
+    implementation 'org.seleniumhq.selenium:selenium-java'
+    //testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'org.assertj:assertj-core'
 
-	// https://mvnrepository.com/artifact/org.testng/testng
-	testImplementation 'org.testng:testng:7.5'
-	// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-	implementation 'io.github.bonigarcia:webdrivermanager:5.1.1'
-	// https://mvnrepository.com/artifact/com.github.javafaker/javafaker
-	implementation 'com.github.javafaker:javafaker:1.0.2'
-	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-	testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation 'org.testng:testng:7.6.0'
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.1.1'
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
 }
 
 test {
-	useTestNG()
+    useTestNG()
 
-	testLogging {
-		exceptionFormat(TestExceptionFormat.FULL)
-	}
+    testLogging {
+        exceptionFormat(TestExceptionFormat.FULL)
+    }
 
-	systemProperties(System.getProperties())
+    systemProperties(System.getProperties())
 }

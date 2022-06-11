@@ -21,5 +21,4 @@ public abstract class BasePage {
     }
 
     public abstract boolean isAt();
-//    public abstract <T extends BasePage> T waitForPageToLoad();
 }
