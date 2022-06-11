@@ -1,4 +1,4 @@
-package com.hetacz.springtests.pages;
+package com.hetacz.springtests.pages.google;
 
 import com.hetacz.springtests.framework.annotations.PageComponent;
 import com.hetacz.springtests.base.BasePage;

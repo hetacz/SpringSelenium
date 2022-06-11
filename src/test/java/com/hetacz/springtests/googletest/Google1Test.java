@@ -3,11 +3,9 @@ package com.hetacz.springtests.googletest;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.hetacz.springtests.BaseTest;
 import com.hetacz.springtests.framework.annotations.LazyAutowired;
-import com.hetacz.springtests.pages.GooglePage;
+import com.hetacz.springtests.pages.google.GooglePage;
 import com.hetacz.springtests.framework.service.Screenshot;
 import org.assertj.core.api.Assertions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

@@ -32,6 +32,9 @@ ext['assertj.version'] = '3.23.1'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
     implementation 'org.jetbrains:annotations:23.0.0'
     testImplementation 'org.jetbrains:annotations:23.0.0'
 
