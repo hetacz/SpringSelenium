@@ -25,10 +25,10 @@ public class UserVisaTest extends BaseTest {
 
     @Test
     public void visaTest() {
-        System.out.println(repository.findAll().size());
+        log.info(String.valueOf(repository.findAll().size()));
         repository
                 .findById(85)
-                .ifPresent(el -> System.out.println(el.getFirstName()));
+                .ifPresent(el -> log.info(el.getFirstName()));
     }
 
     @Test
@@ -40,7 +40,8 @@ public class UserVisaTest extends BaseTest {
         users.forEach(user -> {
             visaRegistrationPO.goTo();
             visaRegistrationPO.isAt();
-            visaRegistrationPO.fillData(user.getFirstName(),
+            visaRegistrationPO.fillData(
+                    user.getFirstName(),
                     user.getLastName(),
                     user.getFromCountry(),
                     user.getToCountry(),
@@ -50,8 +51,9 @@ public class UserVisaTest extends BaseTest {
                     user.getComments()
             );
             visaRegistrationPO.submit();
-            System.out.println(visaRegistrationPO.getRequestNumber());
+            log.info(visaRegistrationPO.getRequestNumber());
         });
+        visaRegistrationPO.tearDown();
     }
 
     @Test
@@ -62,7 +64,8 @@ public class UserVisaTest extends BaseTest {
         users.forEach(user -> {
             visaRegistrationPO.goTo();
             visaRegistrationPO.isAt();
-            visaRegistrationPO.fillData(user.getFirstName(),
+            visaRegistrationPO.fillData(
+                    user.getFirstName(),
                     user.getLastName(),
                     user.getFromCountry(),
                     user.getToCountry(),
@@ -72,8 +75,9 @@ public class UserVisaTest extends BaseTest {
                     user.getComments()
             );
             visaRegistrationPO.submit();
-            System.out.println(visaRegistrationPO.getRequestNumber());
+            log.info(visaRegistrationPO.getRequestNumber());
         });
+        visaRegistrationPO.tearDown();
     }
 
     @Test
@@ -82,7 +86,7 @@ public class UserVisaTest extends BaseTest {
                 .findByDobBetween(Date.valueOf("1995-01-01"), Date.valueOf("1999-01-01"))
                 .stream()
                 .map(User::getFirstName)
-                .forEach(System.out::println);
+                .forEach(log::info);
     }
 
     @DataProvider(name = "getDates") // dont paralellize as creation of Webdriver has already happend
@@ -109,7 +113,7 @@ public class UserVisaTest extends BaseTest {
                 user.getComments()
         );
         visaRegistrationPO.submit();
-        System.out.println(visaRegistrationPO.getRequestNumber());
+        log.info(visaRegistrationPO.getRequestNumber());
     }
 
     @DataProvider(name = "getParametrizedDates") // don't parallelize as creation of Webdriver has already happened
@@ -136,6 +140,6 @@ public class UserVisaTest extends BaseTest {
                 user.getComments()
         );
         visaRegistrationPO.submit();
-        System.out.println(visaRegistrationPO.getRequestNumber());
+        log.info(visaRegistrationPO.getRequestNumber());
     }
 }

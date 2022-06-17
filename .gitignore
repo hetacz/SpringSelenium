@@ -16,3 +16,4 @@ drivers/
 screenshots/
 directory/
 /src/test/java/com/hetacz/springtests/scope/
+logs/
