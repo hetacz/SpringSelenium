@@ -22,11 +22,6 @@ public class GooglePage extends BasePage {
         driver.get(url);
     }
 
-    public void close() {
-        driver.close();
-        driver.quit();
-    }
-
     @Override
     public boolean isAt() {
         return searchComponent.isAt();

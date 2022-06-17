@@ -19,6 +19,5 @@ public class FlightTest extends BaseTest {
         flightPO.goTo(appDetails.getUrl());
         Assertions.assertThat(flightPO.isAt()).isTrue();
         Assertions.assertThat(flightPO.getLabels()).isEqualTo(appDetails.getLabels());
-        flightPO.quit();
     }
 }

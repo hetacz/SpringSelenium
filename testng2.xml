@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Default Suite" verbose="2" thread-count="2" parallel="tests">
+    <test name="Database Test">
+        <packages>
+            <package name="com.hetacz.springtests.database"/>
+        </packages>
+    </test>
+    <test name="Google Test">
+        <packages>
+            <package name="com.hetacz.springtests.googletest"/>
+        </packages>
+    </test>
+    <test name="Flight Test">
+        <packages>
+            <package name="com.hetacz.springtests.flight"/>
+        </packages>
+    </test>
+    <test name="Scope Test">
+        <packages>
+            <package name="com.hetacz.springtests.scope"/>
+        </packages>
+    </test>
+    <test name="Props Test">
+        <packages>
+            <package name="com.hetacz.springtests.props"/>
+        </packages>
+    </test>
+    <test name="Resources Test">
+        <packages>
+            <package name="com.hetacz.springtests.resource"/>
+        </packages>
+    </test>
+<!--&lt;!&ndash;    <test name="Visa Test">&ndash;&gt; need params to work-->
+<!--        <packages>-->
+<!--            <package name="com.hetacz.springtests.visa"/>-->
+<!--        </packages>-->
+<!--    </test>-->
+    <test name="Window Test">
+    <packages>
+        <package name="com.hetacz.springtests.window"/>
+    </packages>
+</test>
+</suite>

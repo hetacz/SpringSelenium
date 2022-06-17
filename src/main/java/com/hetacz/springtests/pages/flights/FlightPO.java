@@ -26,10 +26,6 @@ public class FlightPO extends BasePage {
         driver.get(url);
     }
 
-    public void quit() {
-        driver.quit();
-    }
-
     @Override
     public boolean isAt() {
         return wait.until(dr -> !linkNavs.isEmpty());

@@ -28,6 +28,5 @@ public class Google1Test extends BaseTest {
         Assertions.assertThat(googlePage.getSearchResult().isAt()).isEqualTo(true);
         Assertions.assertThat(googlePage.getSearchResult().getCount()).isGreaterThan(2);
         screenShot.takeScreenShot();
-        googlePage.close();
     }
 }

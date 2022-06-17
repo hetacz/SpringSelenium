@@ -15,7 +15,6 @@ public class CrossBrowserTest extends BaseTest {
     public void browserTest() {
         // comment out @ConditionalOnMissingBean in WebDriverConfig when using this method
         WebDriver driver = ctx.getBean("chromeDriver", WebDriver.class);
-        driver.quit();
         //ctx.getBean("firefoxDriver", WebDriver.class).get("https://www.yahoo.com"); // commented out as @Conditial is uncommented
     }
 }
