@@ -21,8 +21,4 @@ public abstract class BasePage {
     }
 
     public abstract boolean isAt();
-
-    public void tearDown() {
-        driver.quit();
-    }
 }

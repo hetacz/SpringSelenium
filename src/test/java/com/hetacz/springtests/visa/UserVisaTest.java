@@ -53,7 +53,6 @@ public class UserVisaTest extends BaseTest {
             visaRegistrationPO.submit();
             log.info(visaRegistrationPO.getRequestNumber());
         });
-        visaRegistrationPO.tearDown();
     }
 
     @Test
@@ -77,7 +76,6 @@ public class UserVisaTest extends BaseTest {
             visaRegistrationPO.submit();
             log.info(visaRegistrationPO.getRequestNumber());
         });
-        visaRegistrationPO.tearDown();
     }
 
     @Test
