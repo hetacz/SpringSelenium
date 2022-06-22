@@ -26,7 +26,7 @@ repositories {
     mavenCentral()
 }
 
-ext['selenium.version'] = '4.2.1'
+ext['selenium.version'] = '4.2.2'
 //ext['rest-assured.version'] = '5.1.0'
 ext['assertj.version'] = '3.23.1'
 

@@ -17,6 +17,8 @@ public class WebDriverConfig {
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver() {
         WebDriverManager.chromedriver().cachePath("drivers").setup();
+        WebDriver driver = new ChromeDriver();
+        Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
         return new ChromeDriver();
     }
 
@@ -24,6 +26,8 @@ public class WebDriverConfig {
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver() {
         WebDriverManager.firefoxdriver().cachePath("drivers").setup();
+        WebDriver driver = new FirefoxDriver();
+        Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
         return new FirefoxDriver();
     }
 }

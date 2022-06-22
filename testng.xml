@@ -7,6 +7,7 @@
             <package name="com.hetacz.springtests.googletest"/>
             <package name="com.hetacz.springtests.flight"/>
             <package name="com.hetacz.springtests.scope"/>
+            <package name="com.hetacz.springtests.steps"/>
             <package name="com.hetacz.springtests.props"/>
             <package name="com.hetacz.springtests.resource"/>
 <!--&lt;!&ndash;            <package name="com.hetacz.springtests.visa"/>&ndash;&gt; need params to work-->
